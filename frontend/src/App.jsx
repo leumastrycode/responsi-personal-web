@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const API_URL = 'https://responsi-personal-web-vtdf.vercel.app/'
+const API_URL = 'https://responsi-personal-web-vtdf.vercel.app/api/cv'
 
 function App() {
   const [cv, setCv] = useState(null)
@@ -46,7 +46,15 @@ function App() {
     )
   }
 
-  const { profile, socials, stats, skills, experiences, education, projects } = cv
+const { 
+  profile = {}, 
+  socials = [], 
+  stats = [], 
+  skills = [], 
+  experiences = [], 
+  education = [], 
+  projects = [] 
+} = cv || {}
 
   return (
     <main className="page-shell">
