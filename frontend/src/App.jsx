@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const API_URL = 'http://localhost:5000/api/cv'
+const API_URL = 'https://responsi-personal-web-vtdf.vercel.app/'
 
 function App() {
   const [cv, setCv] = useState(null)
@@ -19,7 +19,7 @@ function App() {
 
         setCv(result.data)
       } catch {
-        setError('Gagal mengambil data CV. Pastikan backend berjalan di http://localhost:5000')
+        setError('Gagal mengambil data CV. Silakan coba beberapa saat lagi.')
       } finally {
         setLoading(false)
       }
