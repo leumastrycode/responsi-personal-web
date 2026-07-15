@@ -77,6 +77,12 @@ const {
 
         <div className="hero-grid">
           <div className="hero-copy">
+            {/* TAMBAHAN 1: Status Badge */}
+            <div className="status-badge">
+              <div className="blink-dot"></div>
+              <span>Open for Opportunities</span>
+            </div>
+
             <div className="eyebrow">Professional Digital CV</div>
             <h1>{profile.name}</h1>
             <h2>{profile.role}</h2>
@@ -126,11 +132,23 @@ const {
             </div>
           </div>
         </div>
+
+        {/* TAMBAHAN 2: Marquee Running Text */}
+        <div className="marquee-wrapper">
+          <div className="marquee-content">
+            <span>CREATIVE DEVELOPER</span> <span className="star">✦</span>
+            <span>UI/UX ENTHUSIAST</span> <span className="star">✦</span>
+            <span>PROBLEM SOLVER</span> <span className="star">✦</span>
+            <span>CREATIVE DEVELOPER</span> <span className="star">✦</span>
+            <span>UI/UX ENTHUSIAST</span> <span className="star">✦</span>
+            <span>PROBLEM SOLVER</span> <span className="star">✦</span>
+          </div>
+        </div>
       </section>
 
       <section className="stats-section">
         {stats.map((item) => (
-          <div className="stat-card" key={item.label}>
+          <div className="stat-card terminal-card" key={item.label}>
             <strong>{item.value}</strong>
             <span>{item.label}</span>
           </div>
@@ -142,7 +160,7 @@ const {
           <span>About</span>
           <h2>Profil Singkat</h2>
         </div>
-        <div className="about-card">
+        <div className="about-card terminal-card">
           <p>{profile.summary}</p>
         </div>
       </section>
@@ -154,7 +172,7 @@ const {
         </div>
         <div className="skills-grid">
           {skills.map((skill) => (
-            <div className="skill-card" key={skill.name}>
+            <div className="skill-card terminal-card" key={skill.name}>
               <div className="skill-top">
                 <strong>{skill.name}</strong>
                 <span>{skill.level}%</span>
@@ -175,7 +193,7 @@ const {
           </div>
           <div className="timeline">
             {experiences.map((item) => (
-              <article className="timeline-item" key={`${item.position}-${item.company}`}>
+              <article className="timeline-item terminal-card" key={`${item.position}-${item.company}`}>
                 <span>{item.period}</span>
                 <h3>{item.position}</h3>
                 <h4>{item.company}</h4>
@@ -192,7 +210,7 @@ const {
           </div>
           <div className="timeline">
             {education.map((item) => (
-              <article className="timeline-item" key={`${item.degree}-${item.school}`}>
+              <article className="timeline-item terminal-card" key={`${item.degree}-${item.school}`}>
                 <span>{item.period}</span>
                 <h3>{item.degree}</h3>
                 <h4>{item.school}</h4>
@@ -210,7 +228,7 @@ const {
         </div>
         <div className="project-grid">
           {projects.map((project) => (
-            <article className="project-card" key={project.title}>
+            <article className="project-card terminal-card" key={project.title}>
               <div className="project-icon">{project.title.charAt(0)}</div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -224,7 +242,7 @@ const {
         </div>
       </section>
 
-      <section className="contact-section" id="contact">
+      <section className="contact-section terminal-card" id="contact">
         <div>
           <span>Contact</span>
           <h2>Siap Berkolaborasi?</h2>
